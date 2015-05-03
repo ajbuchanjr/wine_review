@@ -3,7 +3,8 @@
 <ol>
 <% @wines.each do |wine| %>
   <li>
-  <p><%= link_to(wine.name, wine) %> (<%= wine.varietal %>) from <%= wine.winery %></p>
+  <p><%= link_to(wine.name.presence || 'No Name', wine) %> (<%= wine.varietal %>) from <%= wine.winery %></p>
 </li>
 <% end %>
 </ol>
+<%= link_to 'Add a New Wine', new_wine_path %>

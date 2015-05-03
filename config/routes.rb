@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  get '/wines' => 'wines#index', as: 'wines'
-  get '/wines/:id' => 'wines#show', as: 'wine'
+  #get '/wines' => 'wines#index', as: 'wines'
+  #get '/wines/:id' => 'wines#show', as: 'wine'
+
+  resources :wines do
+    get 'page/:page', :action => :index, :on => :collection
+  end
+
   root 'wines#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
