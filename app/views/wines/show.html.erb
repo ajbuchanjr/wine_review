@@ -1,0 +1,11 @@
+<% content_for :name, @wine.name %>
+<article class="wine">
+  <header>
+    <h2><%= @wine.name %> (<%= @wine.year %>)</h2>
+  </header>
+  <p><label>Winery:</label> <%= @wine.winery %></p>
+  <p><label>Country:</label> <%= @wine.country %></p>
+  <p><label>Varietal:</label> <%= @wine.varietal %></p>
+</article>
+
+<%= link_to 'Back to All Wines', wines_path %>
